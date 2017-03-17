@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.2.0/dist/aframe-extras.min.js"></script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/v2.1.1/dist/aframe-extras.loaders.min.js"></script>
+    <script src="alongpath.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+    <a-scene id="scene">
+      <a-assets id="assets" timeout="10000">
+        <a-asset-item id="tub-dae" src="tub.dae" preload="auto"></a-asset-item>
+        <a-asset-item id="showerhead-dae" src="showerhead.dae" preload="auto"></a-asset-item>
+        <a-asset-item id="legs-ply" src="legs.bake.ply"></a-asset-item>
+      </a-assets>
+      <a-camera id="main-cam" active="true" wasd-controls="enabled:true;acceleration:15"></a-camera>
+      <a-light type="ambient" intensity="0.9"></a-light>
+      <a-light position="0.9 1.1 -0.4" rotation="0 -20 20" color="#ffb" intensity=".6"></a-light>
+      <a-sky id="sky" color="#992299"></a-sky>
+      <a-entity id="bathtub" collada-model="#tub-dae" rotation="0 -90 0" scale="2.4 2.4 2.4"></a-entity>
+      <a-entity id="showerhead" collada-model="#showerhead-dae" rotation="0 -90 0" scale="2.4 2.4 2.4" position="0 2.4 -1.5">
+        <a-entity id="water-container" material="color:red" position="0.45 -0.4 0" rotation="0 0 34">
+<!--          base position-->
+<!--          <a-cylinder radius="0.002" height="0.004" position="-0.13 0.48 0"></a-cylinder>-->
+<!--          top position-->
+<!--          <a-cylinder radius="0.002" height="0.004" position="-0.09 0.48 0"></a-cylinder>-->
+<!--          bottom position-->
+<!--          <a-cylinder radius="0.002" height="0.004" position="-0.17 0.48 0"></a-cylinder>-->
+<!--          left position-->
+<!--          <a-cylinder radius="0.002" height="0.004" position="-0.13 0.48 0.04"></a-cylinder>-->
+<!--          right position-->
+<!--          <a-cylinder radius="0.002" height="0.004" position="-0.13 0.48 -0.04"></a-cylinder>-->
+        </a-entity>
+      </a-entity>
+<!--      <a-entity id="legs" ply-model="src: #legs-ply" scale=".02 .01 .02" rotation="180 0 0" position="0 0.45 0.4"></a-entity>-->
+      <script src="water.js"></script>
+    </a-scene>
+  </body>
+</html>
